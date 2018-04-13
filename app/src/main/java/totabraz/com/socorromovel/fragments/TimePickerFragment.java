@@ -1,4 +1,4 @@
-package totabraz.com.socorromovel.utils;
+package totabraz.com.socorromovel.fragments;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;

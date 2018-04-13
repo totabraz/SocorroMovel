@@ -1,4 +1,4 @@
-package totabraz.com.socorromovel.activities.setups;
+package totabraz.com.socorromovel.activities.informations;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

@@ -2,12 +2,9 @@ package totabraz.com.socorromovel.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,9 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import totabraz.com.socorromovel.R;
-import totabraz.com.socorromovel.activities.setups.AnonymousReportAlertActivity;
+import totabraz.com.socorromovel.activities.informations.AnonymousReportAlertActivity;
 import totabraz.com.socorromovel.controller.MyController;
-import totabraz.com.socorromovel.dao.FirebaseDao;
 import totabraz.com.socorromovel.fragments.ListCallsFragment;
 
 public class MainActivity extends AppCompatActivity

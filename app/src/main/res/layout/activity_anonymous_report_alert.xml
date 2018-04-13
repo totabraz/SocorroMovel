@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/themeDefault"
-    tools:context="totabraz.com.socorromovel.activities.setups.AnonymousReportAlertActivity">
+    tools:context="totabraz.com.socorromovel.activities.informations.AnonymousReportAlertActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

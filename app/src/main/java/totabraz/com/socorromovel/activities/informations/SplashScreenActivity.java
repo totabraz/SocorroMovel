@@ -1,4 +1,4 @@
-package totabraz.com.socorromovel.activities;
+package totabraz.com.socorromovel.activities.informations;
 
 import android.content.Intent;
 import android.os.Handler;

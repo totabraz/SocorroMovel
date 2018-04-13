@@ -40,4 +40,11 @@
     </style>
 
 
+    <style name="btn">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/btn_round</item>
+        <item name="android:textColor">@color/textDark</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
 </resources>

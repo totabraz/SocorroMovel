@@ -9,14 +9,14 @@
     tools:context="totabraz.com.socorromovel.activities.AnonymousReportActivity">
 
     <ScrollView
+        android:layout_above="@id/btnConfirm"
         android:id="@+id/svAreal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TableLayout
             android:layout_width="match_parent"
-
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -24,52 +24,32 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <!--<TextView-->
-                <!--style="@style/labelStyle"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Quando o ocorreu?"-->
-                <!--android:textColor="@color/textDark" />-->
-
-                <!--<DatePicker-->
-                <!--android:id="@+id/dtData"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-
-                <!--</DatePicker>-->
-                <!--<TextView-->
-                <!--style="@style/labelStyle"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="De que horas?"-->
-                <!--android:textColor="@color/textDark" />-->
-
-                <!--<TimePicker-->
-                <!--android:id="@+id/tpTime"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-
-                <!--</TimePicker>-->
-
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <android.support.design.widget.TextInputEditText
-                        android:focusable="false"
+                        android:maxLines="1"
+                        android:inputType="text"
                         android:id="@+id/edTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Dia da ocorrência" />
+                        android:focusable="false"
+                        android:hint="@string/dia_da_ocorrencia" />
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <android.support.design.widget.TextInputEditText
-                        android:focusable="false"
+                        android:maxLines="1"
+                        android:inputType="text"
                         android:id="@+id/edDate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Data da ocorrência" />
+                        android:focusable="false"
+                        android:hint="@string/data_da_ocorrencia" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -78,10 +58,63 @@
                     android:layout_height="wrap_content">
 
                     <android.support.design.widget.TextInputEditText
-                        android:id="@+id/Street"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:id="@+id/edStreet"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Endereço do Fato" />
+                        android:hint="@string/endereco_do_fato" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_weight="1"
+                        style="@style/labelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:maxLines="1"
+                            android:nextFocusDown="@id/edNumber"
+                            android:inputType="text"
+                            android:id="@+id/edNeighborhood"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/bairro" />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_weight="2"
+                        style="@style/labelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:maxLines="1"
+                            android:inputType="text"
+                            android:id="@+id/edNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/numero" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    style="@style/labelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.design.widget.TextInputEditText
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:id="@+id/edCep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/cep" />
                 </android.support.design.widget.TextInputLayout>
 
 
@@ -91,10 +124,12 @@
                     android:layout_height="wrap_content">
 
                     <android.support.design.widget.TextInputEditText
-                        android:id="@+id/Number"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:id="@+id/edExtras"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Número " />
+                        android:hint="@string/complemento" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -103,70 +138,59 @@
                     android:layout_height="wrap_content">
 
                     <android.support.design.widget.TextInputEditText
-                        android:id="@+id/Neighborhood"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:id="@+id/edReferential"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Bairro" />
+                        android:hint="@string/pontoDeReferencia" />
                 </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    style="@style/labelStyle"
+                <LinearLayout
                     android:layout_width="match_parent"
+                    android:orientation="horizontal"
                     android:layout_height="wrap_content">
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/Cep"
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/labelStyle"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:maxLines="1"
+                            android:id="@+id/edEstado"
+                            android:inputType="text"
+                            android:focusable="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/estado"
+                            android:text="@string/rn"/>
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_weight="1"
+                        style="@style/labelStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Cep" />
-                </android.support.design.widget.TextInputLayout>
+                        android:layout_height="wrap_content">
 
+                        <android.support.design.widget.TextInputEditText
+                            android:maxLines="1"
+                            android:inputType="text"
+                            android:id="@+id/edMonicipio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/municipio" />
+                    </android.support.design.widget.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
-                    style="@style/labelStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                </LinearLayout>
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/Extras"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Complemento" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    style="@style/labelStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/Referential"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Ponto Referência" />
-                </android.support.design.widget.TextInputLayout>
-
-                <!--<android.support.design.widget.TextInputLayout
-                style="@style/labelStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                   >
-
-                    <android.support.design.widget.TextInputEditText
-                    android:focusable="false
-                    android:id="@+id/WhereItHappen"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="EstadoMunicípio" />
-                </android.support.design.widget.TextInputLayout>
-                -->
-                <Button
-                    android:id="@+id/btnConfirm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/make_anonymous_report" />
             </LinearLayout>
 
         </TableLayout>
     </ScrollView>
+    <Button
+        style="@style/btn"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/make_anonymous_report" />
 </RelativeLayout>
