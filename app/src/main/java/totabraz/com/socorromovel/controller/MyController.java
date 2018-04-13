@@ -16,7 +16,11 @@ public class MyController {
         this.firebaseDao = new FirebaseDao();
     }
 
-    public ArrayList<EmergencyNumber> getEmergencyNumbers() {
-        return firebaseDao.getEmegerncyNumber();
-    }
+//    public boolean isAuth(){
+//        if (firebaseDao)
+//
+//    }
+//    public ArrayList<EmergencyNumber> getEmergencyNumbers() {
+//        return firebaseDao.getEmegerncyNumber();
+//    }
 }

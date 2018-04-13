@@ -1,4 +1,4 @@
-package totabraz.com.socorromovel;
+package totabraz.com.socorromovel.activities.setups;
 
 import android.Manifest;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import totabraz.com.socorromovel.R;
 import totabraz.com.socorromovel.activities.MainActivity;
-import totabraz.com.socorromovel.activities.TutsActivity;
 
 public class SetupAndroidPermissionsActivity extends AppCompatActivity {
     private static final int REQUEST_PHONE_CALL = 1;

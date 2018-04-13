@@ -9,4 +9,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fake_report_content">Falsa comunicação a Polícia é crime previsto no Artigo 340 do Código Penal Brasileiro, ficando sujeito o autor a detenção de 1 a 6 meses ou multa.</string>
+    <string name="fake_report_title">Falsa declaração</string>
+    <string name="make_anonymous_report">Fazer Denúncia Anônima</string>
 </resources>

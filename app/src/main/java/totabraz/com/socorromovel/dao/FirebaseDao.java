@@ -31,30 +31,34 @@ public class FirebaseDao {
         this.mAuth = FirebaseAuth.getInstance();
         this.mDatabase = FirebaseDatabase.getInstance().getReference();
     }
-
-    public ArrayList<EmergencyNumber> getEmegerncyNumber() {
-        final ArrayList<EmergencyNumber> numbers = new ArrayList<>();
-        ValueEventListener numbersListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot objSnapshot : dataSnapshot.getChildren()) {
-                    numbers.add(objSnapshot.getValue(EmergencyNumber.class));
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-            }
-
-            @Override
-            protected void finalize() throws Throwable {
-                super.finalize();
-            }
-        };
-        mDatabase.child(SysUtils.FB_EMERGENCY_NUMBERS).addValueEventListener(numbersListener);
-        if (numbers.size() < 1) return numbers;
-        else return null;
-    }
+//
+//    private FirebaseAuth getAuth(){
+//        return FirebaseAuth.getInstance();
+//    }
+//
+//    public ArrayList<EmergencyNumber> getEmegerncyNumber() {
+//        final ArrayList<EmergencyNumber> numbers = new ArrayList<>();
+//        ValueEventListener numbersListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for (DataSnapshot objSnapshot : dataSnapshot.getChildren()) {
+//                    numbers.add(objSnapshot.getValue(EmergencyNumber.class));
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                // Getting Post failed, log a message
+//                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+//            }
+//
+//            @Override
+//            protected void finalize() throws Throwable {
+//                super.finalize();
+//            }
+//        };
+//        mDatabase.child(SysUtils.FB_EMERGENCY_NUMBERS).addValueEventListener(numbersListener);
+//        if (numbers.size() < 1) return numbers;
+//        else return null;
+//    }
 }

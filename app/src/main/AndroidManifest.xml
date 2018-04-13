@@ -3,6 +3,8 @@
     package="totabraz.com.socorromovel">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -24,7 +26,8 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.setups.SetupAndroidPermissionsActivity" />
-        <activity android:name=".activities.ListCallsActivity"></activity>
+        <activity android:name=".activities.setups.AnonymousReportAlertActivity" />
+        <activity android:name=".activities.AnonymousReportActivity"/>
     </application>
 
 </manifest>

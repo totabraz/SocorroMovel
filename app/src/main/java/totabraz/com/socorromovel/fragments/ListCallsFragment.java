@@ -93,6 +93,4 @@ public class ListCallsFragment extends Fragment {
         };
         mDatabase.addValueEventListener(emergencyNumbersListener);
     }
-
-
 }
