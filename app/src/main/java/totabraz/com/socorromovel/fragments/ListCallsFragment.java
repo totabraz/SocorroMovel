@@ -1,6 +1,7 @@
 package totabraz.com.socorromovel.fragments;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -19,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 
 import totabraz.com.socorromovel.R;
@@ -57,7 +59,6 @@ public class ListCallsFragment extends Fragment {
     }
 
     private void getEmergencyCalls() {
-
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(SysUtils.FB_EMERGENCY_NUMBERS);
         ValueEventListener emergencyNumbersListener = new ValueEventListener() {
             @Override
@@ -93,4 +94,12 @@ public class ListCallsFragment extends Fragment {
         };
         mDatabase.addValueEventListener(emergencyNumbersListener);
     }
+
+    /**
+     *
+     *     1-  o que eu preciso
+     *     2- progress
+     *     3 - return
+      */
+
 }
