@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "5000047950",
+    "firebase_url": "https://socorromovel-c328e.firebaseio.com",
+    "project_id": "socorromovel-c328e",
+    "storage_bucket": "socorromovel-c328e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5000047950:android:ec88971d19298c6c",
+        "android_client_info": {
+          "package_name": "totabraz.com.socorromovel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5000047950-59v4q12e7k0souimhg8ae2spvv5hbmfi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "totabraz.com.socorromovel",
+            "certificate_hash": "4e9ec6d219545a93e92af2bb7d5180fbf1b8ac38"
+          }
+        },
+        {
+          "client_id": "5000047950-cv3t2mlbjpascmq790jhj10c62bodtkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdVgOjquejJ8NmJmv-VvtKv9jGgxqbZA4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5000047950-cv3t2mlbjpascmq790jhj10c62bodtkk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
