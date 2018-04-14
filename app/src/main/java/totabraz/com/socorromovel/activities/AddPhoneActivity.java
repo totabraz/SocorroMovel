@@ -41,7 +41,7 @@ public class AddPhoneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_phone);
-        getSupportActionBar().setTitle(R.string.denuncia_anonima);
+        getSupportActionBar().setTitle("Adicionar Celular");
         mAuth = FirebaseAuth.getInstance();
         final FirebaseAuth mAuth = FirebaseAuth.getInstance();
         /** ---- Preset. DataPickerDialog --- */
