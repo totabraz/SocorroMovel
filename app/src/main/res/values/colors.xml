@@ -27,6 +27,10 @@
     <color name="textDark">#212121</color>
     <color name="textLight">#e2e2e2</color>
 
+    <color name="statusAdd">#aac0aa</color>
+    <color name="statusStoled">#ff6c73</color>
+    <color name="statusNotFound">#979797</color>
+
 
 
 

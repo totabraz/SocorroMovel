@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/themeDefault"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/themeDefault"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="totabraz.com.socorromovel.activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
@@ -13,9 +13,5 @@
         android:id="@+id/flFragmentArea"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    <!--<FrameLayout-->
-        <!--android:id="@+id/flFragmentArea"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
 
 </RelativeLayout>

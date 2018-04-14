@@ -1,13 +1,88 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/themeDefault"
     tools:context="totabraz.com.socorromovel.fragments.SearchImeiFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_above="@+id/inputFild">
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/reportArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/inputFild">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvImei"
+            style="@style/textTitleBoldHuge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/tvStatus"
+            style="@style/textLabelStatusPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvImei"/>
+
+        <TextView
+            android:id="@+id/tvOwner"
+            style="@style/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvStatus"/>
+
+        <TextView
+            android:id="@+id/tvDateAdd"
+            style="@style/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvOwner"/>
+
+        <TextView
+            android:id="@+id/tvDateReported"
+            style="@style/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDateAdd"/>
+    </RelativeLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputFild"
+        style="@style/labelStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSearch">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edImei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:hint="@string/imei_do_celular"
+
+            android:inputType="text"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSearch"
+        style="@style/btnBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/buscar_por_imei" />
+
+</RelativeLayout>

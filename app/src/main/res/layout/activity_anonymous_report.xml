@@ -187,10 +187,10 @@
         </TableLayout>
     </ScrollView>
     <Button
-        style="@style/btn"
+        style="@style/btnBottom"
         android:layout_alignParentBottom="true"
         android:id="@+id/btnConfirm"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/make_anonymous_report" />

@@ -19,28 +19,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
         <activity android:name=".activities.TutsActivity" />
-
-
-
-
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.setups.SetupAndroidPermissionsActivity" />
         <activity android:name=".activities.informations.AnonymousReportAlertActivity" />
-        <activity android:name=".activities.AnonymousReportActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activities.informations.InformationActivity"></activity>
+        <activity android:name=".activities.AnonymousReportActivity" />
+        <activity android:name=".activities.informations.InformationActivity" />
     </application>
 
 </manifest>

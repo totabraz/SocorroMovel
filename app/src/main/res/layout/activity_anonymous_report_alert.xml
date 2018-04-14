@@ -30,7 +30,7 @@
         android:text="@string/make_anonymous_report"
         android:layout_alignParentBottom="true"
         android:id="@+id/btnConfirm"
-        style="@style/btn"
+        style="@style/btnBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </RelativeLayout>

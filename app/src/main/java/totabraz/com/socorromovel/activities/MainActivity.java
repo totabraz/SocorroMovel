@@ -17,11 +17,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import totabraz.com.socorromovel.R;
 import totabraz.com.socorromovel.activities.informations.AnonymousReportAlertActivity;
-import totabraz.com.socorromovel.adapters.ListCallsAdapter;
-import totabraz.com.socorromovel.controller.MyController;
 import totabraz.com.socorromovel.fragments.ListCallsFragment;
+import totabraz.com.socorromovel.fragments.LoginFragment;
 import totabraz.com.socorromovel.fragments.SearchImeiFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity
 
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +47,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        mAuth = FirebaseAuth.getInstance();
         openHomeFrag();
     }
-    private void openHomeFrag(){
+
+    private void openHomeFrag() {
         getSupportActionBar().setTitle("Segurança Digital");
         this.fragmentManager = getSupportFragmentManager();
         this.fragmentTransaction = fragmentManager.beginTransaction();
@@ -56,11 +60,10 @@ public class MainActivity extends AppCompatActivity
         this.fragmentTransaction.commit();
     }
 
-
     @Override
     public void onBackPressed() {
         int indice_frag_home = fragmentManager.getBackStackEntryCount();
-        if (indice_frag_home==1){
+        if (indice_frag_home == 1) {
             AlertDialog.Builder builder;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
@@ -82,8 +85,7 @@ public class MainActivity extends AppCompatActivity
                     .setIcon(R.drawable.ic_warning)
                     .show();
 
-        }
-        else if (indice_frag_home>1){
+        } else if (indice_frag_home > 1) {
             fragmentManager.popBackStack(fragmentManager.getBackStackEntryAt(1).getId(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
             this.openHomeFrag();
         }
@@ -130,7 +132,14 @@ public class MainActivity extends AppCompatActivity
             this.fragmentTransaction.replace(R.id.flFragmentArea, searchImeiFragment);
 
         } else if (id == R.id.nav_addPhone) {
-            MyController myController = new MyController();
+            LoginFragment loginFragment = LoginFragment.newInstance();
+            this.fragmentTransaction.replace(R.id.flFragmentArea, loginFragment);
+            if (mAuth == null) {
+
+            } else {
+
+
+            }
             getSupportActionBar().setTitle("Login");
 
         } else if (id == R.id.nav_emergencyCall) {

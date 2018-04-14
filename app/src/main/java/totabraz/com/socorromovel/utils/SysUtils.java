@@ -18,11 +18,17 @@ public abstract class SysUtils {
 
     public static final String FB_EMERGENCY_NUMBERS = PUBLIC_ROOT + "/emergency_numbers";
     public static final String FB_ANONYMOUS_REPORT = SEMI_PUBLIC_ROOT +"/anonymous_report";
+    public static final String FB_REPORTED_PHONES = PUBLIC_ROOT + "/reported_mobile";
 
+    public static final String FB_USERS = PRIVATE_ROOT + "/user";
     /**
      *  Activities KEYS
      */
     public static final String KEY_MSG_SEND_ANONY_REPORT = "key_anonymous";
+
+    public static final String PHONE_ADD = "Celular já cadastrado";
+    public static final String PHONE_STOLED = "Celular Roubado";
+
 
 
 

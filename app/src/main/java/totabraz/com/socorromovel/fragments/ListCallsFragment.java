@@ -4,6 +4,7 @@ package totabraz.com.socorromovel.fragments;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -98,11 +99,6 @@ public class ListCallsFragment extends Fragment {
         mDatabase.addValueEventListener(emergencyNumbersListener);
     }
 
-    /**
-     *
-     *     1-  o que eu preciso
-     *     2- progress
-     *     3 - return
-      */
+
 
 }

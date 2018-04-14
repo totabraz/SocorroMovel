@@ -23,7 +23,7 @@
         android:layout_marginRight="50dp" />
     </RelativeLayout>
     <Button
-        style="@style/btn"
+        style="@style/btnBottom"
         android:id="@+id/btnReturn"
         android:text="@string/voltar"
         android:layout_alignParentBottom="true"

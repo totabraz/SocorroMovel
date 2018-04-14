@@ -1,13 +1,10 @@
 <resources>
-    <string name="app_name">SocorroMovel</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="app_name">Segurança Digital</string>
+    <string name="title_activity_main">Segurança Digital</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fake_report_content">Falsa comunicação a Polícia é crime previsto no Artigo 340 do Código Penal Brasileiro, ficando sujeito o autor a detenção de 1 a 6 meses ou multa.</string>
     <string name="fake_report_title">Falsa declaração</string>
@@ -25,4 +22,13 @@
     <string name="estado">Estado</string>
     <string name="denuncia_anonima">Denúncia Anônima</string>
     <string name="voltar">Voltar</string>
+    <string name="buscar_por_imei">Buscar por IMEI</string>
+    <string name="email">E-mail</string>
+    <string name="entrar">Entrar</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="telefone">Telefone</string>
+    <string name="senha">Senha</string>
+    <string name="repetir_senha">Repetir Senha</string>
+    <string name="criar_usuario">Criar Usuário</string>
+    <string name="imei_do_celular">IMEI do celular</string>
 </resources>
