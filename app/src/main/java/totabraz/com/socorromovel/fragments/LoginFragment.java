@@ -13,7 +13,11 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -36,6 +40,8 @@ public class LoginFragment extends Fragment {
 
     private TextInputEditText edEmail;
     private TextInputEditText edPasswd;
+    private LinearLayout llLoginArea;
+    private ProgressBar progressBar;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -55,11 +61,12 @@ public class LoginFragment extends Fragment {
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Login");
 
-
+        this.progressBar = view.findViewById(R.id.progressBar);
         this.mAuth = FirebaseAuth.getInstance();
         this.edEmail = view.findViewById(R.id.edtEmail);
         this.edPasswd = view.findViewById(R.id.edtPasswd);
-        Button btnLogin = view.findViewById(R.id.btnSingIn);
+        this.llLoginArea = view.findViewById(R.id.llLoginArea);
+        final Button btnLogin = view.findViewById(R.id.btnSingIn);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +78,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 singUp();
+                hideKeyboard(btnLogin);
             }
         });
 
@@ -81,6 +89,7 @@ public class LoginFragment extends Fragment {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
                             login();
+                            hideKeyboard(edPasswd);
                             return true;
                         default:
                             break;
@@ -89,13 +98,14 @@ public class LoginFragment extends Fragment {
                 return false;
             }
         });
-
         return  view;
     }
 
 
     private void login(){
         if ((edEmail.getText().toString().length()>0) &&(edPasswd.getText().toString().length()>0) ) {
+            this.progressBar.setVisibility(View.VISIBLE);
+            this.llLoginArea.setVisibility(View.GONE);
             String mail = edEmail.getText().toString();
             String pswd = edPasswd.getText().toString();
             setupFirebaseUser(mail, pswd);
@@ -103,28 +113,28 @@ public class LoginFragment extends Fragment {
     }
 
     private void setupFirebaseUser(String mail, String pswd) {
-        final boolean[] userNotExist = {true};
         this.mAuth.signInWithEmailAndPassword(mail, pswd)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            userNotExist[0] = false;
                             fragmentManager = getActivity().getSupportFragmentManager();
                             fragmentTransaction = fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.flFragmentArea, ProfileFragment.newInstance());
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         } else {
+//                            task.getException().getCause();
+//                            task.getException().getMessage();
+                            Toast.makeText(getActivity().getApplicationContext(), "Erro ao Entrar",Toast.LENGTH_LONG).show();
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                         }
                     }
                 });
 
-        if (userNotExist[0]) {
-//            createUSer(mail, pswd);
-            singUp();
-        }
+        progressBar.setVisibility(View.GONE);
+        llLoginArea.setVisibility(View.VISIBLE);
+
     }
     public void singUp(){
         fragmentManager = getActivity().getSupportFragmentManager();
@@ -132,5 +142,11 @@ public class LoginFragment extends Fragment {
         fragmentTransaction.replace(R.id.flFragmentArea, SingUpFragment.newInstance());
         fragmentTransaction.addToBackStack("login");
         fragmentTransaction.commit();
+    }
+
+
+    private void hideKeyboard(View view) {
+        InputMethodManager imm = (InputMethodManager) getActivity().getApplicationContext().getSystemService(getActivity().getApplicationContext().INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

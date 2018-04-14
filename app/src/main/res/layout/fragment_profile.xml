@@ -1,13 +1,86 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="totabraz.com.socorromovel.fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/mySmartphones"
+        style="@style/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/meus_celulares" />
+
+    <View
+        android:id="@+id/borderBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/mySmartphones"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:background="@color/colorPrimaryDark" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_above="@+id/btnsArea"
+        android:layout_below="@+id/borderBottom">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvNothingToShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhum celular cadastrado"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/borderBottom"
+        android:id="@+id/rvMyPhones"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnsArea">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/btnsArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnReportMobile"
+            style="@style/btnBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnAddMobile"
+            android:text="@string/reportar_roubo"
+            android:layout_margin="5dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnAddMobile"
+            style="@style/btnBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:text="@string/adicionar_outro"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+

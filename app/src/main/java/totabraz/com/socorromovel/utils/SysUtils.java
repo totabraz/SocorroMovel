@@ -19,6 +19,8 @@ public abstract class SysUtils {
     public static final String FB_EMERGENCY_NUMBERS = PUBLIC_ROOT + "/emergency_numbers";
     public static final String FB_ANONYMOUS_REPORT = SEMI_PUBLIC_ROOT +"/anonymous_report";
     public static final String FB_REPORTED_PHONES = PUBLIC_ROOT + "/reported_mobile";
+    public static final String FB_MY_PHONES = "mySmartphones";
+
 
     public static final String FB_USERS = PRIVATE_ROOT + "/user";
     /**

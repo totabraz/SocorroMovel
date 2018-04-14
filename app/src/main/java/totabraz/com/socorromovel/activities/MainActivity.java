@@ -23,6 +23,7 @@ import totabraz.com.socorromovel.R;
 import totabraz.com.socorromovel.activities.informations.AnonymousReportAlertActivity;
 import totabraz.com.socorromovel.fragments.ListCallsFragment;
 import totabraz.com.socorromovel.fragments.LoginFragment;
+import totabraz.com.socorromovel.fragments.ProfileFragment;
 import totabraz.com.socorromovel.fragments.SearchImeiFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -132,15 +133,13 @@ public class MainActivity extends AppCompatActivity
             this.fragmentTransaction.replace(R.id.flFragmentArea, searchImeiFragment);
 
         } else if (id == R.id.nav_addPhone) {
-            LoginFragment loginFragment = LoginFragment.newInstance();
-            this.fragmentTransaction.replace(R.id.flFragmentArea, loginFragment);
-            if (mAuth == null) {
-
+            if (mAuth.getCurrentUser() != null) {
+                LoginFragment loginFragment = LoginFragment.newInstance();
+                this.fragmentTransaction.replace(R.id.flFragmentArea, loginFragment);
             } else {
-
-
+                ProfileFragment profileFragment = ProfileFragment.newInstance();
+                this.fragmentTransaction.replace(R.id.flFragmentArea, profileFragment);
             }
-            getSupportActionBar().setTitle("Login");
 
         } else if (id == R.id.nav_emergencyCall) {
             getSupportActionBar().setTitle("Chamadas de Emergência");

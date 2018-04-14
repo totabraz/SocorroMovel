@@ -35,7 +35,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusable="false"
-                        android:hint="@string/dia_da_ocorrencia" />
+                        android:hint="@string/hora_da_ocorrencia" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -49,7 +49,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusable="false"
-                        android:hint="@string/data_da_ocorrencia" />
+                        android:hint="@string/dia_da_ocorrencia" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout

@@ -122,11 +122,7 @@ public class SingUpFragment extends Fragment {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             addUser(user);
-                            fragmentManager = getActivity().getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.flFragmentArea, ProfileFragment.newInstance());
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -138,6 +134,11 @@ public class SingUpFragment extends Fragment {
     private void addUser(User user){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(SysUtils.FB_USERS).child(mAuth.getCurrentUser().getUid());
         mDatabase.setValue(user);
+        fragmentManager = getActivity().getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.flFragmentArea, ProfileFragment.newInstance());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
 }

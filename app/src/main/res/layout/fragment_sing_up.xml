@@ -5,11 +5,13 @@
     style="@style/themeDefault"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="totabraz.com.socorromovel.activities.SingUpActivity">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_above="@id/btnConfirm"
+        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/btnConfirm"
+        android:layout_marginBottom="100dp"
         android:id="@+id/svAreal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -98,6 +100,7 @@
         style="@style/btnBottom"
         android:layout_alignParentBottom="true"
         android:id="@+id/btnSingUp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/criar_usuario" />

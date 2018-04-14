@@ -17,7 +17,7 @@
     <string name="numero">Número</string>
     <string name="bairro">Bairro</string>
     <string name="endereco_do_fato">Endereço do Fato</string>
-    <string name="data_da_ocorrencia">Data da ocorrência</string>
+    <string name="hora_da_ocorrencia">Hora da ocorrência</string>
     <string name="dia_da_ocorrencia">Dia da ocorrência</string>
     <string name="estado">Estado</string>
     <string name="denuncia_anonima">Denúncia Anônima</string>
@@ -31,4 +31,11 @@
     <string name="repetir_senha">Repetir Senha</string>
     <string name="criar_usuario">Criar Usuário</string>
     <string name="imei_do_celular">IMEI do celular</string>
+    <string name="dia_da_compra">Dia da compra</string>
+    <string name="quando_comprou">Quando comprou</string>
+    <string name="modelo_do_aparelho">Modelo do aparelho</string>
+    <string name="salvar">Salvar</string>
+    <string name="meus_celulares">Meus Celulares</string>
+    <string name="reportar_roubo">Reportar Roubo</string>
+    <string name="adicionar_outro">Adicionar Outro</string>
 </resources>

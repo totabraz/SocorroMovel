@@ -62,7 +62,7 @@ public class SearchImeiFragment extends Fragment {
                     switch (keyCode) {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
-                            if (edImei.getText().toString().length()>1)
+                            if (edImei.getText().toString().length() > 1)
                                 checkImei(edImei.getText().toString());
                             return true;
                         default:
@@ -84,7 +84,7 @@ public class SearchImeiFragment extends Fragment {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (edImei.getText().toString().length()>1)
+                if (edImei.getText().toString().length() > 1)
                     checkImei(edImei.getText().toString());
             }
         });
