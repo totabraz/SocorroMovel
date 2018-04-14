@@ -3,6 +3,7 @@ package totabraz.com.socorromovel.activities;
 import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import java.util.List;
 import java.util.Locale;
 
 import totabraz.com.socorromovel.R;
+import totabraz.com.socorromovel.activities.informations.InformationActivity;
 import totabraz.com.socorromovel.domain.AnonymousReport;
 import totabraz.com.socorromovel.utils.SysUtils;
 import totabraz.com.socorromovel.fragments.TimePickerFragment;
@@ -43,16 +45,11 @@ public class AnonymousReportActivity extends AppCompatActivity implements TimePi
     private TextInputEditText edEstado;
     private TextInputEditText edMonicipio;
 
-    private void updateFieldDate() {
-        String myFormat = "dd/MM/yy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.ITALIAN);
-        edDate.setText(sdf.format(myCalendar.getTime()));
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anonymous_report);
+        getSupportActionBar().setTitle(R.string.denuncia_anonima);
 
         /** ---- Preset. DataPickerDialog --- */
         date = new DatePickerDialog.OnDateSetListener() {
@@ -120,7 +117,62 @@ public class AnonymousReportActivity extends AppCompatActivity implements TimePi
         finish();
     }
 
-    private void report() {
+    private void updateFieldDate() {
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.ITALIAN);
+        edDate.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    private void showCalendar(int year, int monthOfYear, int dayOfMonth) {
+        myCalendar.set(Calendar.YEAR, year);
+        myCalendar.set(Calendar.MONTH, monthOfYear);
+        myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        updateFieldDate();
+    }
+
+    /**
+     * This method wait for
+     * @param timePicker
+     * @param i
+     * @param i1
+     */
+    @Override
+    public void onTimeSet(TimePicker timePicker, int i, int i1) {
+        TextInputEditText edDate = findViewById(R.id.edTime);
+    }
+
+
+    /**
+     * verify required fields()
+     */
+    private void verifyToSend() {
+        boolean allFilled = true;
+        // if (edTime.getText().toString().equals("")) allFilled = false;
+        if (edDate.getText().toString().equals("")) allFilled = false;
+        if (edStreet.getText().toString().equals("")) allFilled = false;
+        if (edNeighborhood.getText().toString().equals("")) allFilled = false;
+        if (edNumber.getText().toString().equals("")) allFilled = false;
+        if (edMonicipio.getText().toString().equals("")) allFilled = false;
+        // if (edCep.getText().toString().equals("")) allFilled = false;
+        // if (edExtras.getText().toString().equals("")) allFilled = false;
+        // if (edReferential.getText().toString().equals("")) allFilled = false;
+        if (allFilled) {
+            sendReport();
+            Intent intent = new Intent(getApplicationContext(), InformationActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString(SysUtils.KEY_MSG_SEND_ANONY_REPORT, "Obrigado por sua Denúncia!\nSeu enviado foi um suscesso!");
+            intent.putExtras(bundle);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(getApplicationContext(), "Preencher campos obrigatórios", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    /**
+     * Method to send this AnonymousReport to FirebaseDatabase
+     */
+    private void sendReport() {
         List<String> tempDate = Arrays.asList(edDate.getText().toString().split("/"));
         String firebaseKeyData = edDate.getText().toString();
         if (tempDate.get(2) != null && tempDate.get(1) != null && tempDate.get(1) != null) {
@@ -142,10 +194,15 @@ public class AnonymousReportActivity extends AppCompatActivity implements TimePi
         anonymousReport.setPontoDeReferencia(edReferential.getText().toString());
         anonymousReport.setBairro(edNeighborhood.getText().toString());
         anonymousReport.setMunicipio(edMonicipio.getText().toString());
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child(SysUtils.FB_ANONYMOUS_REPORT).child(firebaseKeyData);
-        mDatabase.child(SysUtils.FB_ANONYMOUS_REPORT).child(firebaseKeyData).setValue(anonymousReport);
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(SysUtils.FB_ANONYMOUS_REPORT).child(firebaseKeyData).push().setValue(anonymousReport);
         cleanFild();
     }
+
+
+    /**
+     * Just UX functions
+     */
 
     private void cleanFild() {
         edDate.setText("");
@@ -159,36 +216,5 @@ public class AnonymousReportActivity extends AppCompatActivity implements TimePi
         edMonicipio.setText("");
     }
 
-    /**
-     * verify required fields()
-     */
-    private void verifyToSend() {
-        boolean allFilled = true;
-        // if (edTime.getText().toString().equals("")) allFilled = false;
-        if (edDate.getText().toString().equals("")) allFilled = false;
-        if (edStreet.getText().toString().equals("")) allFilled = false;
-        if (edNeighborhood.getText().toString().equals("")) allFilled = false;
-        if (edNumber.getText().toString().equals("")) allFilled = false;
-        if (edMonicipio.getText().toString().equals("")) allFilled = false;
-        // if (edCep.getText().toString().equals("")) allFilled = false;
-        // if (edExtras.getText().toString().equals("")) allFilled = false;
-        // if (edReferential.getText().toString().equals("")) allFilled = false;
-        if (allFilled) {
-            report();
-        } else {
-            Toast.makeText(getApplicationContext(), "Preencher campos obrigatórios", Toast.LENGTH_LONG).show();
-        }
-    }
 
-    private void showCalendar(int year, int monthOfYear, int dayOfMonth) {
-        myCalendar.set(Calendar.YEAR, year);
-        myCalendar.set(Calendar.MONTH, monthOfYear);
-        myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        updateFieldDate();
-    }
-
-    @Override
-    public void onTimeSet(TimePicker timePicker, int i, int i1) {
-        TextInputEditText edDate = findViewById(R.id.edTime);
-    }
 }

@@ -9,9 +9,13 @@
     tools:context="totabraz.com.socorromovel.activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/flFragmentArea"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <!--<FrameLayout-->
+        <!--android:id="@+id/flFragmentArea"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
 
 </RelativeLayout>

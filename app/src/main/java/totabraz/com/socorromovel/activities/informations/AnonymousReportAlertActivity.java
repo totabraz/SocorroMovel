@@ -15,6 +15,7 @@ public class AnonymousReportAlertActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anonymous_report_alert);
+        getSupportActionBar().setTitle(R.string.denuncia_anonima);
         Button btnConfirm = findViewById(R.id.btnConfirm);
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -9,7 +9,7 @@
     android:paddingTop="10dp">
 
     <LinearLayout
-        android:id="@+id/rlCallArea"
+        android:id="@+id/llCallArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

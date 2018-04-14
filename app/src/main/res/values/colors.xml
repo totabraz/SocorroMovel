@@ -25,6 +25,7 @@
     <color name="bgColorDark">@color/colorPrimaryDark</color>
 
     <color name="textDark">#212121</color>
+    <color name="textLight">#e2e2e2</color>
 
 
 

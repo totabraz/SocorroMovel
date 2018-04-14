@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class ListCallsAdapter extends RecyclerView.Adapter<ListCallsAdapter.View
         }
         holder.tvName.setText(numbers.get(position).getName());
         holder.tvNumber.setText(numbers.get(position).getPhone());
-        holder.tvName.setOnClickListener(new View.OnClickListener() {
+        holder.llCallArea.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingPermission")
             @Override
             public void onClick(View view) {
@@ -70,12 +71,13 @@ public class ListCallsAdapter extends RecyclerView.Adapter<ListCallsAdapter.View
         View viewBorderBottom;
         TextView tvName;
         TextView tvNumber;
-
+        LinearLayout llCallArea;
         public ViewHolder(View holder, ViewGroup parent) {
             super(holder);
             tvName = holder.findViewById(R.id.tvName);
             tvNumber = holder.findViewById(R.id.tvNumber);
             viewBorderBottom = holder.findViewById(R.id.borderBottom);
+            llCallArea = holder.findViewById(R.id.llCallArea);
 
         }
     }

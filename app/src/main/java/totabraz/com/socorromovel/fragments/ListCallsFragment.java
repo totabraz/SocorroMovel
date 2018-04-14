@@ -42,10 +42,13 @@ public class ListCallsFragment extends Fragment {
 
 
     public ListCallsFragment() {
-        myController = new MyController();
 
     }
 
+    public static ListCallsFragment newInstance() {
+        ListCallsFragment fragment = new ListCallsFragment();
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

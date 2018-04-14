@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/themeDefault"
     tools:context="totabraz.com.socorromovel.activities.informations.InformationActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_above="@id/btnReturn"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tvMsgm"
+        android:textAlignment="center"
+        style="@style/textTitleBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
 
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginRight="50dp" />
+    </RelativeLayout>
+    <Button
+        style="@style/btn"
+        android:id="@+id/btnReturn"
+        android:text="@string/voltar"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
