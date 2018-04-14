@@ -68,14 +68,14 @@ public class AddPhoneActivity extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(validFields()){
+//                if(validFields()){
                     Smartphone smartphone = new Smartphone();
                     smartphone.setDateAdd(edDate.getText().toString());
                     smartphone.setImei(edImei.getText().toString().replaceAll("\\s+",""));
                     smartphone.setOwner(mAuth.getCurrentUser().getUid());
                     smartphone.setStatus(SysUtils.PHONE_ADD);
                     addPhoneOnFirebase(smartphone);
-                }
+//                }
             }
         });
     }
