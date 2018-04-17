@@ -124,8 +124,6 @@ public class LoginFragment extends Fragment {
                             fragmentTransaction.addToBackStack(null);
                             fragmentTransaction.commit();
                         } else {
-//                            task.getException().getCause();
-//                            task.getException().getMessage();
                             Toast.makeText(getActivity().getApplicationContext(), "Erro ao Entrar",Toast.LENGTH_LONG).show();
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                         }

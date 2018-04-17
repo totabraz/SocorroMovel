@@ -1,5 +1,6 @@
 package totabraz.com.socorromovel.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
@@ -28,10 +29,10 @@ import totabraz.com.socorromovel.utils.SysUtils;
 
 public class MyPhoneAdapter extends RecyclerView.Adapter<MyPhoneAdapter.ViewHolder> {
     private ArrayList<Smartphone> smartphones;
-    private Context context;
+    private Activity context;
 
 
-    public MyPhoneAdapter(Context context, ArrayList<Smartphone> smartphones) {
+    public MyPhoneAdapter(Activity context, ArrayList<Smartphone> smartphones) {
         this.context = context;
         this.smartphones = smartphones;
     }

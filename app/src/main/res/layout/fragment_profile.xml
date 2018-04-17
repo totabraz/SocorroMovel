@@ -60,6 +60,8 @@
 
         <Button
             android:id="@+id/btnReportMobile"
+
+            android:visibility="gone"
             style="@style/btnBottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -38,7 +38,6 @@ public class ProfileFragment extends Fragment {
     private ProgressBar progressBar ;
     private RecyclerView rvMyPhones ;
     private Button btnReportMobile ;
-    private Button btnAddMobile ;
     private TextView tvNothingToShow;
     private ArrayList<Smartphone> myPhones;
 
@@ -65,7 +64,7 @@ public class ProfileFragment extends Fragment {
         progressBar.setVisibility(View.VISIBLE);
         rvMyPhones = view.findViewById(R.id.rvMyPhones);
         btnReportMobile = view.findViewById(R.id.btnReportMobile);
-        btnAddMobile = view.findViewById(R.id.btnAddMobile);
+        Button btnAddMobile = view.findViewById(R.id.btnAddMobile);
         tvNothingToShow = view.findViewById(R.id.tvNothingToShow);
         mAuth = FirebaseAuth.getInstance();
         getMyPhones();
@@ -97,7 +96,7 @@ public class ProfileFragment extends Fragment {
                     progressBar.setVisibility(View.GONE);
                     rvMyPhones.setVisibility(View.VISIBLE);
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-                    MyPhoneAdapter mAdapter = new MyPhoneAdapter(getActivity().getApplicationContext(), myPhones);
+                    MyPhoneAdapter mAdapter = new MyPhoneAdapter(getActivity(), myPhones);
                     rvMyPhones.setLayoutManager(mLayoutManager);
                     rvMyPhones.setItemAnimator(new DefaultItemAnimator());
                     rvMyPhones.setAdapter(mAdapter);
