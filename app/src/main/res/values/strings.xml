@@ -17,7 +17,6 @@
     <string name="numero">Número</string>
     <string name="bairro">Bairro</string>
     <string name="endereco_do_fato">Endereço do Fato</string>
-    <string name="hora_da_ocorrencia">Hora da ocorrência</string>
     <string name="dia_da_ocorrencia">Dia da ocorrência</string>
     <string name="estado">Estado</string>
     <string name="denuncia_anonima">Denúncia Anônima</string>
