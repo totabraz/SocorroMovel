@@ -11,7 +11,9 @@ At Security theme we won as first, and at the general of this Hackathon we won a
   ```
 * **Rayssa Cunha** - *Webservices*
   ```
-  (but we didn't use It, Webserves and Firebase don't comunicate so well, becouse they break the function "Real Time Database" from Firebase)
+  But we didn't use It,\n
+  Webserves and Firebase don't comunicate so well,
+  becouse they break the function "Real Time Database" from Firebase
   ```
 * **Tadeu** - *Graduating law school*
   Support if we had any doubt
